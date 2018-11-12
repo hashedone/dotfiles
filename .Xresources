@@ -1,0 +1,41 @@
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+Xft.lcdfilter:              lcddefault
+
+#URxvt.depth:                32
+#URxvt.geometry:             90x30
+#URxvt.loginShell:           true
+#URxvt.internalBorder:       3
+#URxvt.lineSpace:            0
+#
+#URxvt*background: #c4a000
+#
+#URxvt*shading: 15
+#
+#URxvt*saveLines: 12000
+#
+#URxvt*foreground: #657b83
+#URxvt*background: #002b36
+#
+#URxvt*font: xft:DejaVu Sans Mono:size=9
+#URxvt*boldFont: xft:DejaVu Sans Mono:bold:size=9
+#
+#URxvt*scrollBar: false
+#
+#URxvt*scrollBar_right: false
+#
+#URxvt*scrollstyle: plain
+#
+#URxvt.perl-ext-common: default,selection-to-clipboard,pasta,matcher,keyboard-select,solarized
+#URxvt.keysym.Control-Shift-V: perl:pasta:paste
+#URxvt.clipboard.autocopy: true
+#URxvt.solarized.default: dark
+#
+#URxvt.matcher.button: 1
+#URxvt.keysym.M-u: perl:url-select:select-next
+#URxvt.url-launcher: firefox
+#URxvt.underlineURLs: True
+#URxvt.keysym.M-Escape: perl:keyboard-select:activate
