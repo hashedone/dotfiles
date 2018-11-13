@@ -7,7 +7,9 @@
 #
 # To get a config file with the same key positions, but for your current
 # layout, use the i3-config-wizard
-#
+
+exec xrandr --output DP-2 --auto --left-of DP-1
+exec --no-startup-id feh --bg-scale /usr/share/backgrounds/warty-final-ubuntu.png
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -26,6 +28,8 @@ font xft:AurulentSansMono Nerd Font 9
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
+set $mod Mod4
+
 set $up k
 set $down j
 set $left h
@@ -105,36 +109,55 @@ bindsym Mod4+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym Mod4+minus scratchpad show
 
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1: main"
+set $ws2 "2: firefox"
+set $ws3 "3: slack"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
 # switch to workspace
-bindsym Mod4+1 workspace 1
-bindsym Mod4+2 workspace 2
-bindsym Mod4+3 workspace 3
-bindsym Mod4+4 workspace 4
-bindsym Mod4+5 workspace 5
-bindsym Mod4+6 workspace 6
-bindsym Mod4+7 workspace 7
-bindsym Mod4+8 workspace 8
-bindsym Mod4+9 workspace 9
-bindsym Mod4+0 workspace 10
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-bindsym Mod4+Shift+1 move container to workspace 1
-bindsym Mod4+Shift+2 move container to workspace 2
-bindsym Mod4+Shift+3 move container to workspace 3
-bindsym Mod4+Shift+4 move container to workspace 4
-bindsym Mod4+Shift+5 move container to workspace 5
-bindsym Mod4+Shift+6 move container to workspace 6
-bindsym Mod4+Shift+7 move container to workspace 7
-bindsym Mod4+Shift+8 move container to workspace 8
-bindsym Mod4+Shift+9 move container to workspace 9
-bindsym Mod4+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
+workspace $ws1 output DP-2
+workspace $ws2 output DP-1
+workspace $ws3 output DP-1
+
+# lock screen
+bindsym Mod4+Escape exec i3lock -i /usr/share/backgrounds/warty-final-ubuntu.png
 # reload the configuration file
 bindsym Mod4+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym Mod4+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym Mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym Mod4+Shift+e exec i3-msg exit
 
 # volume ctrl
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 2%+ && pkill -RTMIN+10 i3blocks 
@@ -175,6 +198,10 @@ bar {
     tray_padding 5
     separator_symbol " "
     workspace_buttons yes
-    status_command ~/usr/bin/i3blocks -c ~/.config/i3blocks/config
+    status_command /usr/local/bin/i3blocks -c ~/.config/i3blocks/config
 }
 
+assign [class="Slack"] $ws3
+assign [class="Telegram"] $ws3
+
+exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws3; exec slack; exec ~/Downloads/Telegram/Telegram; workspace $ws2; workspace $ws1'

@@ -46,7 +46,7 @@ RESET=$(tput sgr0)
 DIR=$(tput setaf 4)
 USER=$(tput setaf 6)
 GENTOO=$(tput setaf 10)
-export PS1=$'\[${GENTOO}\]\uf30d  \[${USER}\]\u \[${DIR}\]\w $(vcprompt)\n\[$(exitcolor)\]\ue234  \[${RESET}\]'
+export PS1=$'\[${GENTOO}\]\uf31b  \[${USER}\]\u \[${DIR}\]\w $(vcprompt)\n\[$(exitcolor)\]\ue234  \[${RESET}\]'
 
 
 export PATH=/home/hashed/usr/bin:$PATH
