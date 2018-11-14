@@ -23,7 +23,7 @@ export TERMINAL=konsole
 exitcolor()
 {
     if [[ $? == 0 ]]; then
-        echo -n "$(tput setaf 10)"
+        echo -n "$(tput setaf 2)"
     else
         echo -n "$(tput setaf 1)"
     fi
@@ -39,14 +39,14 @@ export VCP_STAGED=$' {green}\ufa5b{value}'
 export VCP_CONFLICTS=$' {red}\ue009{value}'
 export VCP_CHANGED=$' {yellow}\ufa5b{value}'
 export VCP_UNTRACKED=$' {yellow}({value})'
-export VCP_CLEAN=$' {green}{bold}\u2714'
+export VCP_CLEAN=$' {green}\u2714'
 export VCP_SEPARATOR=""
 
 RESET=$(tput sgr0)
 DIR=$(tput setaf 4)
 USER=$(tput setaf 6)
-GENTOO=$(tput setaf 10)
-export PS1=$'\[${GENTOO}\]\uf31b  \[${USER}\]\u \[${DIR}\]\w $(vcprompt)\n\[$(exitcolor)\]\ue234  \[${RESET}\]'
+GREEN=$(tput setaf 2)
+export PS1=$'\[$(exitcolor)\]\uf31b  \[${USER}\]\u \[${DIR}\]\w $(vcprompt)\n\[${GREEN}\]\ue234  \[${RESET}\]'
 
 
 export PATH=/home/hashed/usr/bin:$PATH
