@@ -204,4 +204,4 @@ bar {
 assign [class="Slack"] $ws3
 assign [class="Telegram"] $ws3
 
-exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws3; exec slack; exec ~/Downloads/Telegram/Telegram; workspace $ws2; workspace $ws1'
+exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws3; exec franz; workspace $ws2; workspace $ws1'
