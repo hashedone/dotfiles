@@ -46,11 +46,16 @@ RESET=$(tput sgr0)
 DIR=$(tput setaf 4)
 USER=$(tput setaf 6)
 GENTOO=$(tput setaf 10)
-export PS1=$'\[${GENTOO}\]\uf30d  \[${USER}\]\u \[${DIR}\]\w $(vcprompt)\n\[$(exitcolor)\]\ue234  \[${RESET}\]'
+
+export PS1=$'\[$(exitcolor)\]\uf31b  \[${USER}\]\u \[${DIR}\]\w $(vcprompt)\n\[${GENTOO}\]\ue234  \[${RESET}\]'
 
 
 export PATH=/home/hashed/usr/bin:$PATH
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+export http_proxy=http://10.158.100.2:8080
+export https_proxy=http://10.158.100.2:8080
+export ftp_proxy=http://10.158.100.2:8080
 
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'

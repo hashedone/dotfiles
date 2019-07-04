@@ -121,12 +121,13 @@ set fillchars+=vert:│
 set hidden
 set lazyredraw
 let g:LanguageClient_serverCommands = {
-	\ 'rust': ['~/.cargo/bin/rustup', 'run', 'nightly', 'rls'],
-    \ 'python': ['~/.local/bin/pyls']
+	\ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'python': ['~/.local/bin/pyls'],
+    \ 'cpp': ['ccls']
 	\ }
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_settingsPath = '/home/bartlomiejkuras/.config/nvim/language_client.json'
-let g:rust_doc#downloaded_rust_doc_dir = '~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/'
+let g:rust_doc#downloaded_rust_doc_dir = '~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/'
 
 set completefunc=LanguageClient#complete
 

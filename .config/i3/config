@@ -175,6 +175,6 @@ bar {
     tray_padding 5
     separator_symbol " "
     workspace_buttons yes
-    status_command ~/usr/bin/i3blocks -c ~/.config/i3blocks/config
+    status_command i3blocks -c ~/.config/i3blocks/config
 }
 
