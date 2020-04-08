@@ -1,0 +1,5 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": ["rust", "html"],
+    "rust.clippy_preference": "on",
+    "rust.cfg_test": true
+}
