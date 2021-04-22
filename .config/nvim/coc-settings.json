@@ -1,5 +1,13 @@
 {
     "coc.preferences.formatOnSaveFiletypes": ["rust", "html"],
-    "rust.clippy_preference": "on",
-    "rust.cfg_test": true
+    "rust-analyzer.procMacro.enable": true,
+    "rust-analyzer.updates.channel": "nightly",
+
+    "languageserver": {
+        "godot": {
+            "host": "127.0.0.1",
+            "port": 6008,
+            "filetypes": ["gd", "gdscript3"]
+        }
+    }
 }

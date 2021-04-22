@@ -13,6 +13,7 @@ Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
 Plug 'altercation/vim-colors-solarized'
 Plug 'jacoborus/tender.vim'
+Plug 'calviken/vim-gdscript3'
 
 Plug 'cespare/vim-toml'
 Plug 'treycordova/rustpeg.vim'
@@ -26,6 +27,8 @@ Plug 'plasticboy/vim-markdown'
 Plug 'mattn/emmet-vim'
 Plug 'cakebaker/scss-syntax.vim'
 
+Plug 'sirtaj/vim-openscad'
+
 call plug#end()
 
 set termguicolors
@@ -35,6 +38,8 @@ set background=dark
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'quantum'
 
+set spelllang=en,pl,cjk
+
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
 nnoremap <c-p> :GFiles<cr>
@@ -43,9 +48,18 @@ nnoremap <c-g> :Rg
 nmap <silent> gn <Plug>(coc-diagnostic-next)
 nmap <silent> gp <Plug>(coc-diagnostic-prev)
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gt <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> ;ra <Plug>(coc-codeaction-selected)
+nmap <silent> ;rf :CocCommand rust-analyzer.applySourceChange<cr>
+nmap <silent> ;re :CocCommand rust-analyzer.expandMacro<cr>
+map <silent> ;rj :CocCommand rust-analyzer.joinLines<cr>
+nmap <silent> ;rp :CocCommand rust-analyzer.parentModule<cr>
+nmap <silent> ;rr :CocCommand rust-analyzer.ssr<cr>
+
+nmap <silent> ;z :set spell!<cr>
+
 
 nmap <silent> ;f <Plug>(coc-format-selected)
 
