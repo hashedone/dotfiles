@@ -1,0 +1,27 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": ["rust", "html"],
+    "codeLens.enable": true,
+    "rust-analyzer.updates.prompt": false,
+    "rust-analyzer.updates.channel": "nightly",
+    "rust-analyzer.experimental.procAttrMacros": true,
+    "rust-analyzer.procMacro.enable": true,
+    "rust-analyzer.rustfmt.enableRangeFormatting": true,
+    "rust-analyzer.assist.importGranularity": "module",
+    "rust-analyzer.lens.enable": true,
+    "rust-analyzer.lens.methodReferences": true,
+    "rust-analyzer.cargo.allFeatures": true,
+    "languageserver": {
+      "haskell": {
+        "command": "haskell-language-server-wrapper",
+        "args": [ "--lsp" ],
+        "rootPatterns": [ "*.cabal", "cabal.config", "cabal.project", "package.yaml", "stack.yaml", ".stack.yaml", ".hie-bios", "BUILD.bazel" ],
+        "filetypes": [ "hs", "lhs", "haskell" ],
+        "initializationOptions": { "languageServerHaskell": { "hlintOn": true }
+        }
+      }
+  },
+  "cSpell.userWords": [
+    "cosmwasm",
+    "tgrade"
+  ]
+}
