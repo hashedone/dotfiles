@@ -60,7 +60,7 @@ function M.setup()
     vim.opt.pumheight = 10
     vim.opt.showmode = false
 
-    vim.opt.showtabline = 2
+    vim.opt.showtabline = 0
 
     vim.opt.undofile = true
 
@@ -71,6 +71,10 @@ function M.setup()
     vim.cmd [[set iskeyword+=-]]
 
     vim.diffopt = "vertical"
+    vim.api.nvim_command('let g:netrw_banner=0')
+
+    vim.api.nvim_command('let g:copilot_no_tab_map = v:true')
+    vim.api.nvim_command('let g:copilot_assume_mapped = v:true')
 end
 
 return M

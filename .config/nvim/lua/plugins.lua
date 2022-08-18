@@ -98,6 +98,13 @@ local function setup_plugins()
         -- Coverage
         use 'stevearc/flow-coverage.nvim'
 
+        -- Markdown
+        use 'godlygeek/tabular'
+        use 'preservim/vim-markdown'
+
+        -- gh copilot
+        use 'github/copilot.vim'
+
         if PACKER_BOOTSTRAP then
             require("packer").sync()
         end

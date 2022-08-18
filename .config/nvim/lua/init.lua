@@ -22,6 +22,10 @@ require 'auto-session'.setup {
 }
 require 'statusline'.setup()
 require 'colorizer'.setup()
+require 'notify'.setup({
+    --    level = vim.log.levels.WARN
+})
+
 
 -- Rooter
 

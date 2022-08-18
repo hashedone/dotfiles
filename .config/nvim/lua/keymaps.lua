@@ -52,8 +52,15 @@ function M.setup()
 
     -- Utility
 
-    keys.set('n', '<Leader><cr>', ':nohl<cr>')
-    keys.set('c', 'mk.', '!mkdir -p <C-r>=expand("%:h")<cr>/')
+    keys.set('n', '<Leader><cr>', ':nohl<cr>', opts)
+    keys.set('c', 'mk.', '!mkdir -p <C-r>=expand("%:h")<cr>/', opts)
+
+    -- GH copilot
+    keys.set('i', '<M-cr>', 'copilot#Accept("")', {
+        silent = true,
+        expr = true,
+    })
+    keys.set('n', '<Leader>cc', ':Copilot<cr?', opts)
 end
 
 return M
